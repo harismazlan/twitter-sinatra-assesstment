@@ -1,0 +1,11 @@
+<h2>Form for user to create a new twit</h2>
+
+<% user_id = current_user.id %>
+
+
+<form method="post" action="/twits/new" id="twit_form">
+    <p>Twit away!:</p>
+    <p><input type=text placeholder="Max 140 characters!" name="twit[content]"></p>
+    <input type="hidden" value=<%= user_id = current_user.id %> name="twit[user_id]" />
+    <input type=submit value="Submit">
+</form>

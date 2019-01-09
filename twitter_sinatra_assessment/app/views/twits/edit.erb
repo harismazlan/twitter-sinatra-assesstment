@@ -1,0 +1,17 @@
+<h2>This is where the form to edit the twits would go</h2>
+
+<form method="post" action="/twits/<%= @twit.id%>/edit">
+    <p>Put any details of your twit down here:</p>
+    <p><input type=text  name="twit[content]" placeholder="<%= @twit.content %>"></p>
+    <input type="hidden" value=<%= user_id = current_user.id %> name="twit[user_id]" />
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <input type=submit value="Submit">
+</form>
+
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

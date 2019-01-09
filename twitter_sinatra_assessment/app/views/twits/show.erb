@@ -1,0 +1,21 @@
+<h2>Shows one twit with the right twit id</h2>
+
+ <p>Twit ID: <%=  "#{params['id']}" %></p>
+ <p>Author ID: <%=  "#{@twit.user_id}" %></p>
+ <p>Twit Content: <%=  "#{@twit.content}" %></p>
+
+<%if current_user.id == @twit.user_id%>
+	<div>
+		<a href="<%="#{params['id']}"%>/edit">Edit</a>
+		<a href="<%="#{params['id']}"%>/delete">Delete</a>
+	</div>
+<%end%>
+
+<%if logged_in?%>
+	<div>
+		<a href="../sessions/success">Take me back to user landing</a>
+		<a href="../twits/new">Post another twit</a>
+	</div>
+<%end%>
+
+<div><a href="/twits">Back to all twits</a></div>

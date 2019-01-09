@@ -1,0 +1,13 @@
+<h2>You have successfully logged in</h2>
+
+<%= "Welcome to Twitter #{@user.email}!" %>
+
+<p>What would you like to do today?</p>
+<a href="/twits/new">Make a new twit</a>
+<a href="/twits">Look at <em>all</em> twits</a>
+<a href="../../mytwits">Look at <em>my</em> twits</a>
+<a href="/users/profile/<%=@user.id%>">View My Profile</a>
+
+<form method="post" action="/sessions/delete">
+    <input type=submit value="Log Me Out">
+</form>

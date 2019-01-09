@@ -1,0 +1,30 @@
+<h2>This is where an index of all twits go</h2>
+
+<table>
+	<tr>
+		<td>ID</td>
+		<td>Twit</td>
+		<td>Author</td>
+		<td>Created At</td>
+	</tr>
+
+		<%@twits.each do |t|%>
+		<% id = t.id%>
+		<% link_id = "/twits/"+id.to_s%>
+		<tr>
+			<td><%= "#{t.id}" %></td>
+			<td><a href=<%=link_id%>> <%= "#{t.content}" %></a></td>
+			<td><%= "#{t.user_id}" %></td>
+			<td><%= "#{t.created_at}" %></td>
+		</tr>
+		<%end%>
+
+</table>
+
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

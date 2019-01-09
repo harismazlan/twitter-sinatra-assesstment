@@ -1,0 +1,14 @@
+<h2>Login Here</h2>
+
+<%if logged_in? %>
+	<p>You are already logged in!</p>
+	<a href="/sessions/success">Got lost?</a>	
+<% else %>
+	<p>Please enter your email and password to log in!</p>
+	<form method="post" action="/sessions/new">
+	    <input type=text placeholder="Email" name="email"><br>
+	    <input type=password placeholder="Password" name="password"></br>
+	    <input type=submit value="Log in">
+	</form>
+<%end%>
+
